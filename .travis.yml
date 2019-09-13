@@ -7,7 +7,7 @@ before_install:
     - docker build -t hmstd/docker-react -f Dockerfile.dev .
 
 script:
-    - docker run -e CI=true hmstd/docker-react npm run test
+    - docker run hmstd/docker-react npm run test -- --coverage
 
 deploy:
     provider: elasticbeanstalk
